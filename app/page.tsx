@@ -335,10 +335,33 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-[#07152d] px-5 py-7 text-white sm:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 text-sm text-white/68 md:flex-row md:items-center md:justify-between">
-          <span>Porto Belo Transportes - base em Sorocaba/SP</span>
-          <span>Contato e suporte comercial: nelsonvyeyra@gmail.com</span>
+      <footer className="border-t border-white/10 bg-[#07152d] px-5 py-9 text-white sm:px-8">
+        <div className="mx-auto grid max-w-7xl gap-7 text-sm md:grid-cols-[1.2fr_1fr_1fr] md:items-start">
+          <div>
+            <p className="text-base font-black tracking-normal text-white">
+              Porto Belo Transportes
+            </p>
+            <p className="mt-2 text-white/62">Base em Sorocaba/SP. Rotas sob consulta.</p>
+          </div>
+          <div>
+            <p className="font-bold text-white/86">Atendimento comercial</p>
+            <a
+              href="mailto:nelsonvyeyra@gmail.com"
+              className="mt-2 inline-flex text-white/62 transition hover:text-white"
+            >
+              nelsonvyeyra@gmail.com
+            </a>
+          </div>
+          <div>
+            <p className="font-bold text-white/86">Desenvolvimento do site</p>
+            <a
+              href="mailto:orquestracs@gmail.com"
+              className="mt-2 inline-flex items-center gap-2 text-white/62 transition hover:text-white"
+            >
+              <Mail className="size-4 text-[#ff3845]" />
+              orquestracs@gmail.com
+            </a>
+          </div>
         </div>
       </footer>
 
