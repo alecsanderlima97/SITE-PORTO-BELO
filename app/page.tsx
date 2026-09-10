@@ -21,6 +21,34 @@ const whatsappUrl =
 
 const gallery = [
   {
+    src: '/frota-industrial.webp',
+    alt: 'Caminhão da frota realizando uma entrega industrial',
+    label: 'Entrega industrial',
+    headline: 'Carga industrial no destino',
+    description: 'Coleta e entrega organizadas para sua operação.',
+  },
+  {
+    src: '/frota-vw-noturna.webp',
+    alt: 'Caminhão baú da frota em uma rodovia durante a noite',
+    label: 'Operação noturna',
+    headline: 'Entrega também à noite',
+    description: 'Compromisso com prazo e segurança em cada rota.',
+  },
+  {
+    src: '/frota-vw-amanhecer.webp',
+    alt: 'Caminhão baú da frota viajando ao amanhecer',
+    label: 'Rotas regionais',
+    headline: 'Rotas que conectam negócios',
+    description: 'Atendimento local, regional e interestadual sob consulta.',
+  },
+  {
+    src: '/frota-hr-urbana.webp',
+    alt: 'Caminhão leve da frota preparado para uma coleta urbana',
+    label: 'Carga leve',
+    headline: 'Agilidade para cargas menores',
+    description: 'Veículo leve para coletas e entregas do dia a dia.',
+  },
+  {
     src: '/slide-entrega-segura.png',
     alt: 'Entrega segura e rápida com carga protegida',
     label: 'Entrega segura',
@@ -164,17 +192,33 @@ export default function Home() {
             <div className="relative overflow-hidden rounded-md border border-white/14 bg-[#061226]">
               <div className="absolute inset-x-0 top-0 z-10 h-px bg-white/50" />
               <div className="relative aspect-[16/10] min-h-0 lg:min-h-[390px]">
-                <div className="carousel-track flex h-full w-[400%]">
+                <div className="carousel-track flex h-full w-[800%]">
                   {gallery.map((item) => (
-                    <figure key={item.src} className="relative h-full w-1/4">
+                    <figure key={item.src} className="relative h-full w-[12.5%] shrink-0">
                       <img
                         src={item.src}
                         alt={item.alt}
                         className="h-full w-full object-contain"
                       />
-                      <figcaption className="absolute bottom-3 left-3 rounded-lg border border-white/12 bg-[#07152d]/82 px-3 py-2 text-xs font-bold text-white shadow-lg backdrop-blur sm:bottom-5 sm:left-5 sm:px-4 sm:text-sm">
-                        {item.label}
-                      </figcaption>
+                      {'headline' in item ? (
+                        <div className="absolute inset-0 flex items-center bg-[linear-gradient(90deg,rgba(7,21,45,.92)_0%,rgba(7,21,45,.72)_35%,transparent_68%)] p-4 sm:p-8">
+                          <div className="max-w-[58%] sm:max-w-[52%]">
+                            <p className="text-[10px] font-black uppercase text-[#ff3845] sm:text-xs">
+                              Porto Belo Transportes
+                            </p>
+                            <h3 className="mt-1 text-lg font-black leading-tight text-white sm:mt-2 sm:text-3xl lg:text-4xl">
+                              {item.headline}
+                            </h3>
+                            <p className="mt-2 hidden text-sm font-semibold leading-6 text-white/78 sm:block">
+                              {item.description}
+                            </p>
+                          </div>
+                        </div>
+                      ) : (
+                        <figcaption className="absolute bottom-3 left-3 rounded-lg border border-white/12 bg-[#07152d]/82 px-3 py-2 text-xs font-bold text-white shadow-lg backdrop-blur sm:bottom-5 sm:left-5 sm:px-4 sm:text-sm">
+                          {item.label}
+                        </figcaption>
+                      )}
                     </figure>
                   ))}
                 </div>

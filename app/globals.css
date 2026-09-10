@@ -177,7 +177,7 @@ body {
 }
 
 .carousel-track {
-  animation: freightCarousel 18s infinite ease-in-out;
+  animation: freightCarousel 40s infinite ease-in-out;
 }
 
 #inicio,
@@ -201,20 +201,36 @@ body {
 
 @keyframes freightCarousel {
   0%,
-  18% {
+  10% {
     transform: translateX(0);
   }
+  12.5%,
+  22.5% {
+    transform: translateX(-12.5%);
+  }
   25%,
-  43% {
+  35% {
     transform: translateX(-25%);
   }
+  37.5%,
+  47.5% {
+    transform: translateX(-37.5%);
+  }
   50%,
-  68% {
+  60% {
     transform: translateX(-50%);
   }
+  62.5%,
+  72.5% {
+    transform: translateX(-62.5%);
+  }
   75%,
-  93% {
+  85% {
     transform: translateX(-75%);
+  }
+  87.5%,
+  97.5% {
+    transform: translateX(-87.5%);
   }
   100% {
     transform: translateX(0);
