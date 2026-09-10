@@ -51,13 +51,13 @@ const services = [
 
 export default function Home() {
   return (
-    <main className="freight-page min-h-screen overflow-hidden bg-background text-foreground">
-      <section className="relative min-h-[92vh] bg-[#07152d] text-white">
+    <main className="freight-page min-h-screen overflow-x-hidden bg-background pb-16 text-foreground sm:pb-0">
+      <section className="relative bg-[#07152d] text-white lg:min-h-[92vh]">
         <img
           src="/slide-entrega-segura.png"
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 h-full w-full scale-105 object-cover opacity-80"
+          className="absolute inset-0 h-full w-full scale-105 object-cover object-[62%_center] opacity-75 sm:object-center sm:opacity-80"
         />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,21,45,.96)_0%,rgba(7,21,45,.78)_46%,rgba(7,21,45,.42)_78%,rgba(7,21,45,.62)_100%)]" />
         <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
@@ -72,16 +72,16 @@ export default function Home() {
           </span>
         </div>
 
-        <header className="relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-5 sm:px-8">
-          <a href="#inicio" className="flex items-center gap-3">
-            <span className="grid size-11 place-items-center rounded-lg bg-white text-[#0a54ad] shadow-lg">
-              <Truck className="size-6" />
+        <header className="relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:px-8 sm:py-5">
+          <a href="#inicio" className="flex min-w-0 items-center gap-2.5 sm:gap-3">
+            <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-white text-[#0a54ad] shadow-lg sm:size-11">
+              <Truck className="size-5 sm:size-6" />
             </span>
-            <span className="leading-tight">
-              <strong className="block text-lg font-black uppercase">
+            <span className="min-w-0 leading-tight">
+              <strong className="block whitespace-nowrap text-base font-black uppercase sm:text-lg">
                 Porto Belo
               </strong>
-              <span className="block text-sm font-semibold text-[#ff3845]">
+              <span className="block text-xs font-semibold text-[#ff3845] sm:text-sm">
                 Transportes
               </span>
             </span>
@@ -109,27 +109,28 @@ export default function Home() {
             href={whatsappUrl}
             className={cn(
               buttonVariants(),
-              'h-10 rounded-lg bg-[#19b55b] px-4 text-white hover:bg-[#15994d]',
+              'h-10 shrink-0 rounded-lg bg-[#19b55b] px-3 text-white hover:bg-[#15994d] sm:px-4',
             )}
+            aria-label="Falar no WhatsApp"
           >
             <Phone className="size-4" />
-            WhatsApp
+            <span className="hidden min-[370px]:inline">WhatsApp</span>
           </a>
         </header>
 
         <div
           id="inicio"
-          className="relative z-10 mx-auto grid min-h-[calc(92vh-84px)] w-full max-w-7xl items-center gap-10 px-5 pb-10 pt-8 sm:px-8 lg:grid-cols-[minmax(0,.85fr)_minmax(540px,660px)] xl:gap-14"
+          className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-8 px-4 pb-10 pt-4 sm:gap-10 sm:px-8 sm:pb-12 sm:pt-8 lg:min-h-[calc(92vh-84px)] lg:grid-cols-[minmax(0,.85fr)_minmax(540px,660px)] xl:gap-14"
         >
           <div className="max-w-3xl">
             <p className="mb-4 inline-flex items-center gap-2 rounded-lg border border-white/18 bg-white/10 px-3 py-2 text-sm font-bold text-white/88 backdrop-blur">
               <MapPin className="size-4 text-[#ff3845]" />
               Base em Sorocaba/SP
             </p>
-            <h1 className="max-w-3xl text-5xl font-black leading-[0.96] tracking-normal sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-3xl text-[2.45rem] font-black leading-[1.03] tracking-normal sm:text-6xl sm:leading-[0.98] lg:text-7xl lg:leading-[0.96]">
               Frete rápido, direto e com frota pronta para carregar.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-white/78">
+            <p className="mt-5 max-w-2xl text-base leading-7 text-white/80 sm:mt-6 sm:text-lg sm:leading-8">
               Porto Belo Transportes atende empresas, obras, lojas e clientes
               particulares com transporte de cargas de até 5 toneladas. A rota
               é avaliada conforme local de coleta, destino e disponibilidade.
@@ -140,7 +141,7 @@ export default function Home() {
                 href="#pre-cadastro"
                 className={cn(
                   buttonVariants(),
-                  'h-12 rounded-lg bg-[#e41f32] px-5 text-base font-extrabold text-white hover:bg-[#c9182a]',
+                  'h-12 w-full rounded-lg bg-[#e41f32] px-4 text-base font-extrabold text-white hover:bg-[#c9182a] sm:w-auto sm:px-5',
                 )}
               >
                 Fazer orçamento rápido
@@ -150,7 +151,7 @@ export default function Home() {
                 href="#frota"
                 className={cn(
                   buttonVariants({ variant: 'outline' }),
-                  'h-12 rounded-lg border-white/22 bg-white/8 px-5 text-base text-white hover:bg-white/14 hover:text-white',
+                  'h-12 w-full rounded-lg border-white/22 bg-white/8 px-5 text-base text-white hover:bg-white/14 hover:text-white sm:w-auto',
                 )}
               >
                 Ver estrutura
@@ -158,11 +159,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative rounded-lg border border-white/20 bg-white/12 p-3 shadow-[0_34px_90px_rgba(0,0,0,.42)] backdrop-blur-md">
+          <div className="relative rounded-lg border border-white/20 bg-white/12 p-2 shadow-[0_24px_60px_rgba(0,0,0,.38)] backdrop-blur-md sm:p-3 sm:shadow-[0_34px_90px_rgba(0,0,0,.42)]">
             <div className="pointer-events-none absolute -inset-1 rounded-xl bg-[linear-gradient(135deg,rgba(255,255,255,.34),rgba(10,84,173,.24),rgba(228,31,50,.26))] opacity-60 blur-xl" />
             <div className="relative overflow-hidden rounded-md border border-white/14 bg-[#061226]">
               <div className="absolute inset-x-0 top-0 z-10 h-px bg-white/50" />
-              <div className="relative aspect-[16/10] min-h-[390px]">
+              <div className="relative aspect-[16/10] min-h-0 lg:min-h-[390px]">
                 <div className="carousel-track flex h-full w-[400%]">
                   {gallery.map((item) => (
                     <figure key={item.src} className="relative h-full w-1/4">
@@ -171,7 +172,7 @@ export default function Home() {
                         alt={item.alt}
                         className="h-full w-full object-contain"
                       />
-                      <figcaption className="absolute bottom-5 left-5 rounded-lg border border-white/12 bg-[#07152d]/82 px-4 py-2 text-sm font-bold text-white shadow-lg backdrop-blur">
+                      <figcaption className="absolute bottom-3 left-3 rounded-lg border border-white/12 bg-[#07152d]/82 px-3 py-2 text-xs font-bold text-white shadow-lg backdrop-blur sm:bottom-5 sm:left-5 sm:px-4 sm:text-sm">
                         {item.label}
                       </figcaption>
                     </figure>
@@ -187,19 +188,19 @@ export default function Home() {
 
       <ServiceMap />
 
-      <section className="relative overflow-hidden bg-white px-5 py-10 sm:px-8">
-        <div className="mx-auto grid max-w-7xl gap-4 md:grid-cols-4">
+      <section className="relative overflow-hidden bg-white px-4 py-9 sm:px-8 sm:py-10">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-3 sm:gap-4 md:grid-cols-4">
           {[
             ['5t', 'capacidade de frete'],
             ['Rotas', 'locais e interestaduais'],
             ['Base', 'operacional em Sorocaba/SP'],
             ['100%', 'contato direto'],
           ].map(([value, label]) => (
-            <div key={label} className="rounded-lg border border-slate-200 p-5">
-              <strong className="block text-3xl font-black text-[#0a54ad]">
+            <div key={label} className="min-w-0 rounded-lg border border-slate-200 p-4 sm:p-5">
+              <strong className="block text-2xl font-black text-[#0a54ad] sm:text-3xl">
                 {value}
               </strong>
-              <span className="mt-1 block text-sm font-semibold text-slate-600">
+              <span className="mt-1 block text-xs font-semibold leading-5 text-slate-600 sm:text-sm">
                 {label}
               </span>
             </div>
@@ -209,7 +210,7 @@ export default function Home() {
 
       <section
         id="servicos"
-        className="relative overflow-hidden bg-[#f4f7fb] px-5 py-16 sm:px-8"
+        className="relative overflow-hidden bg-[#f4f7fb] px-4 py-12 sm:px-8 sm:py-16"
       >
         <Package
           className="pointer-events-none absolute left-[5%] bottom-10 size-20 rotate-[-12deg] text-[#e41f32]/10"
@@ -224,7 +225,7 @@ export default function Home() {
             <p className="text-sm font-black uppercase text-[#e41f32]">
               Serviços
             </p>
-            <h2 className="mt-3 text-4xl font-black tracking-normal text-[#07152d]">
+            <h2 className="mt-3 text-[2rem] font-black leading-tight tracking-normal text-[#07152d] sm:text-4xl">
               Frete sob medida para quem precisa resolver hoje.
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
@@ -249,20 +250,20 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="frota" className="bg-[#07152d] px-5 py-16 text-white sm:px-8">
+      <section id="frota" className="bg-[#07152d] px-4 py-12 text-white sm:px-8 sm:py-16">
         <div className="mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.1fr_.9fr]">
           <div className="overflow-hidden rounded-lg border border-white/14">
             <img
               src="/frota-branca-arte-porto-belo.png"
               alt="Arte comercial da frota da Porto Belo Transportes em Sorocaba"
-              className="h-full max-h-[560px] w-full object-cover"
+              className="aspect-[4/3] w-full object-cover sm:max-h-[560px] sm:aspect-auto"
             />
           </div>
           <div>
             <p className="text-sm font-black uppercase text-[#ff3845]">
               Estrutura
             </p>
-            <h2 className="mt-3 text-4xl font-black tracking-normal">
+            <h2 className="mt-3 text-[2rem] font-black leading-tight tracking-normal sm:text-4xl">
               Veículos certos para fretes locais, leves e médios.
             </h2>
             <div className="mt-6 grid gap-3">
@@ -287,13 +288,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contato" className="bg-white px-5 py-16 sm:px-8">
+      <section id="contato" className="bg-white px-4 py-12 sm:px-8 sm:py-16">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[.95fr_1.05fr]">
           <div>
             <p className="text-sm font-black uppercase text-[#e41f32]">
               Orçamento
             </p>
-            <h2 className="mt-3 text-4xl font-black tracking-normal text-[#07152d]">
+            <h2 className="mt-3 text-[2rem] font-black leading-tight tracking-normal text-[#07152d] sm:text-4xl">
               Fale com o responsável e envie os detalhes da sua carga.
             </h2>
             <p className="mt-4 text-base leading-7 text-slate-600">
@@ -304,7 +305,7 @@ export default function Home() {
               href={whatsappUrl}
               className={cn(
                 buttonVariants(),
-                'mt-7 h-12 rounded-lg bg-[#19b55b] px-5 text-base text-white hover:bg-[#15994d]',
+                'mt-7 h-12 w-full rounded-lg bg-[#19b55b] px-5 text-base text-white hover:bg-[#15994d] sm:w-auto',
               )}
             >
               Chamar no WhatsApp
@@ -321,12 +322,12 @@ export default function Home() {
             ].map(([Icon, text]) => (
               <div
                 key={String(text)}
-                className="flex items-center gap-4 rounded-lg border border-slate-200 bg-[#f8fafc] p-4"
+                className="flex min-w-0 items-center gap-3 rounded-lg border border-slate-200 bg-[#f8fafc] p-4 sm:gap-4"
               >
                 <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-[#0a54ad] text-white">
                   <Icon className="size-5" />
                 </span>
-                <span className="text-base font-bold text-[#07152d]">
+                <span className="min-w-0 break-words text-sm font-bold text-[#07152d] sm:text-base">
                   {String(text)}
                 </span>
               </div>
@@ -335,7 +336,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-white/10 bg-[#07152d] px-5 py-9 text-white sm:px-8">
+      <footer className="border-t border-white/10 bg-[#07152d] px-4 py-9 text-white sm:px-8">
         <div className="mx-auto grid max-w-7xl gap-7 text-sm md:grid-cols-[1.2fr_1fr_1fr] md:items-start">
           <div>
             <p className="text-base font-black tracking-normal text-white">
@@ -367,7 +368,8 @@ export default function Home() {
 
       <a
         href={whatsappUrl}
-        className="fixed bottom-5 right-5 z-40 inline-flex h-14 items-center gap-2 rounded-lg bg-[#19b55b] px-5 text-base font-black text-white shadow-2xl shadow-green-900/30 transition hover:bg-[#15994d]"
+        className="fixed bottom-3 right-3 z-40 inline-flex h-12 items-center gap-2 rounded-lg bg-[#19b55b] px-4 text-sm font-black text-white shadow-2xl shadow-green-900/30 transition hover:bg-[#15994d] sm:bottom-5 sm:right-5 sm:h-14 sm:px-5 sm:text-base"
+        aria-label="Solicitar orçamento pelo WhatsApp"
       >
         <Phone className="size-5" />
         Orçamento

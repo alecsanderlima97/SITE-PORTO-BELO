@@ -88,13 +88,13 @@ export function QuoteForm() {
   }
 
   return (
-    <section id="pre-cadastro" className="bg-white px-5 py-16 sm:px-8">
+    <section id="pre-cadastro" className="bg-white px-4 py-12 sm:px-8 sm:py-16">
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[.8fr_1.2fr]">
         <div>
           <p className="text-sm font-black uppercase text-[#e41f32]">
             Orçamento rápido
           </p>
-          <h2 className="mt-3 text-4xl font-black tracking-normal text-[#07152d]">
+          <h2 className="mt-3 text-[2rem] font-black leading-tight tracking-normal text-[#07152d] sm:text-4xl">
             Envie origem, destino e carga para receber uma orientação.
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-600">
@@ -116,7 +116,7 @@ export function QuoteForm() {
           </div>
         </div>
 
-        <form className="grid gap-4 rounded-lg border border-slate-200 bg-[#f8fafc] p-4 shadow-sm sm:p-6">
+        <form className="grid min-w-0 gap-4 rounded-lg border border-slate-200 bg-[#f8fafc] p-4 shadow-sm sm:p-6">
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="grid gap-2 text-sm font-bold text-[#07152d]">
               Seu nome
@@ -174,11 +174,11 @@ export function QuoteForm() {
             />
           </label>
 
-          <div className="grid gap-3 sm:grid-cols-[auto_1fr] sm:items-center">
+          <div className="grid min-w-0 gap-3 sm:grid-cols-[auto_1fr] sm:items-center">
             <button
               type="button"
               onClick={useCurrentLocation}
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-[#0a54ad]/20 bg-white px-4 text-sm font-black text-[#0a54ad] transition hover:bg-blue-50"
+              className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg border border-[#0a54ad]/20 bg-white px-3 text-sm font-black text-[#0a54ad] transition hover:bg-blue-50 sm:w-auto sm:px-4"
             >
               {location.status === 'loading' ? (
                 <Loader2 className="size-4 animate-spin" />
@@ -197,7 +197,7 @@ export function QuoteForm() {
             href={whatsappUrl}
             target="_blank"
             rel="noreferrer"
-            className="mt-2 inline-flex h-13 items-center justify-center gap-2 rounded-lg bg-[#19b55b] px-5 text-base font-black text-white shadow-lg shadow-green-900/15 transition hover:bg-[#15994d]"
+            className="mt-2 inline-flex min-h-13 items-center justify-center gap-2 rounded-lg bg-[#19b55b] px-4 py-3 text-center text-base font-black leading-5 text-white shadow-lg shadow-green-900/15 transition hover:bg-[#15994d] sm:px-5"
           >
             Enviar orçamento no WhatsApp
             <ArrowRight className="size-5" />

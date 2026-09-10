@@ -50,6 +50,7 @@
 
 body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 :root {
@@ -179,6 +180,15 @@ body {
   animation: freightCarousel 18s infinite ease-in-out;
 }
 
+#inicio,
+#pre-cadastro,
+#mapa,
+#servicos,
+#frota,
+#contato {
+  scroll-margin-top: 1rem;
+}
+
 @keyframes cartMove {
   0%,
   100% {
@@ -215,5 +225,11 @@ body {
   .carousel-track,
   .cart-float {
     animation: none;
+  }
+}
+
+@media (max-width: 639px) {
+  .cart-float {
+    display: none;
   }
 }

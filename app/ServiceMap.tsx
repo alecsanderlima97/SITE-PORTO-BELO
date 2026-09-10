@@ -23,13 +23,13 @@ const servicePoints = [
 
 export function ServiceMap() {
   return (
-    <section id="mapa" className="bg-[#f4f7fb] px-5 py-16 sm:px-8">
+    <section id="mapa" className="bg-[#f4f7fb] px-4 py-12 sm:px-8 sm:py-16">
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[.9fr_1.1fr] lg:items-center">
         <div>
           <p className="text-sm font-black uppercase text-[#e41f32]">
             Área de atendimento
           </p>
-          <h2 className="mt-3 text-4xl font-black tracking-normal text-[#07152d]">
+          <h2 className="mt-3 text-[2rem] font-black leading-tight tracking-normal text-[#07152d] sm:text-4xl">
             Rotas locais, regionais e interestaduais avaliadas caso a caso.
           </h2>
           <p className="mt-4 text-base leading-7 text-slate-600">
@@ -65,7 +65,7 @@ export function ServiceMap() {
 
           <a
             href="#pre-cadastro"
-            className="mt-7 inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-[#e41f32] px-5 text-base font-black text-white shadow-lg shadow-red-950/15 transition hover:bg-[#c9182a]"
+            className="mt-7 inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-[#e41f32] px-4 text-center text-base font-black text-white shadow-lg shadow-red-950/15 transition hover:bg-[#c9182a] sm:w-auto sm:px-5"
           >
             Informar rota para orçamento
             <ArrowRight className="size-5" />
@@ -73,26 +73,26 @@ export function ServiceMap() {
         </div>
 
         <div className="overflow-hidden rounded-lg border border-slate-200 bg-white shadow-xl shadow-blue-950/8">
-          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 px-4 py-4">
-            <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 p-4">
+            <div className="flex min-w-0 items-start gap-3 sm:items-center">
               <span className="grid size-10 place-items-center rounded-lg bg-[#e41f32] text-white">
                 <Navigation className="size-5" />
               </span>
-              <div>
-                <strong className="block text-lg text-[#07152d]">
+              <div className="min-w-0">
+                <strong className="block text-base text-[#07152d] sm:text-lg">
                   Porto Belo Transportes
                 </strong>
-                <span className="text-sm font-semibold text-slate-500">
+                <span className="block text-sm font-semibold leading-5 text-slate-500">
                   Alameda das Violetas, 308 - Jardim Simus
                 </span>
               </div>
             </div>
-            <span className="rounded-full border border-[#0a54ad]/20 bg-[#0a54ad]/8 px-3 py-2 text-sm font-black text-[#0a54ad]">
+            <span className="w-full rounded-full border border-[#0a54ad]/20 bg-[#0a54ad]/8 px-3 py-2 text-center text-sm font-black text-[#0a54ad] sm:w-auto">
               Rotas sob consulta
             </span>
           </div>
 
-          <div className="relative aspect-[16/10] min-h-[320px] bg-slate-200">
+          <div className="relative h-[280px] bg-slate-200 sm:h-auto sm:aspect-[16/10] sm:min-h-[320px]">
             <iframe
               title="Mapa da base da Porto Belo Transportes em Sorocaba"
               src={mapUrl}
