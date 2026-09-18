@@ -8,7 +8,6 @@ import {
   PackageCheck,
   Phone,
   ShoppingCart,
-  Truck,
 } from 'lucide-react';
 
 import { buttonVariants } from '@/components/ui/button';
@@ -32,7 +31,7 @@ export default function Home() {
     <main className="freight-page min-h-screen overflow-x-hidden bg-background pb-16 text-foreground sm:pb-0">
       <section className="relative bg-[#07152d] text-white lg:min-h-[92vh]">
         <img
-          src="/slide-entrega-segura.png"
+          src="/frota-branca-arte-porto-belo.png"
           alt=""
           aria-hidden="true"
           className="absolute inset-0 h-full w-full scale-105 object-cover object-[62%_center] opacity-75 sm:object-center sm:opacity-80"
@@ -52,17 +51,11 @@ export default function Home() {
 
         <header className="relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:px-8 sm:py-5">
           <a href="#inicio" className="flex min-w-0 items-center gap-2.5 sm:gap-3">
-            <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-white text-[#0a54ad] shadow-lg sm:size-11">
-              <Truck className="size-5 sm:size-6" />
-            </span>
-            <span className="min-w-0 leading-tight">
-              <strong className="block whitespace-nowrap text-base font-black uppercase sm:text-lg">
-                Porto Belo
-              </strong>
-              <span className="block text-xs font-semibold text-[#ff3845] sm:text-sm">
-                Transportes
-              </span>
-            </span>
+            <img
+              src="/porto-belo-logo.svg"
+              alt="Porto Belo Transportes"
+              className="h-11 w-[202px] object-contain object-left sm:h-12 sm:w-[220px]"
+            />
           </a>
 
           <nav className="hidden items-center gap-7 text-sm font-semibold text-white/82 md:flex">
@@ -289,6 +282,20 @@ export default function Home() {
                 </span>
               </div>
             ))}
+            <a
+              href="https://share.google/biZ9KiKddn5BOt7Ow"
+              target="_blank"
+              rel="noreferrer"
+              className="flex min-w-0 items-center gap-3 rounded-lg border border-slate-200 bg-[#f8fafc] p-4 transition hover:border-[#0a54ad]/45 hover:bg-white sm:gap-4"
+            >
+              <span className="grid size-10 shrink-0 place-items-center rounded-lg bg-[#0a54ad] text-white">
+                <MapPin className="size-5" />
+              </span>
+              <span className="min-w-0 flex-1 text-sm font-bold text-[#07152d] sm:text-base">
+                Ver perfil da Porto Belo no Google
+              </span>
+              <ArrowRight className="size-5 shrink-0 text-[#e41f32]" />
+            </a>
           </div>
         </div>
       </section>

@@ -5,48 +5,40 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const gallery = [
   {
-    src: '/frota-industrial.webp',
+    src: '/frota-industrial-adesivada.png',
     alt: 'Caminhão da frota realizando uma entrega industrial',
     headline: 'Carga industrial no destino',
     description: 'Coleta e entrega organizadas para sua operação.',
   },
   {
-    src: '/frota-vw-noturna.webp',
-    alt: 'Caminhão baú da frota em uma rodovia durante a noite',
-    headline: 'Entrega também à noite',
-    description: 'Compromisso com prazo e segurança em cada rota.',
-  },
-  {
-    src: '/frota-vw-amanhecer.webp',
+    src: '/frota-vw-amanhecer-adesivada.png',
     alt: 'Caminhão baú da frota viajando ao amanhecer',
     headline: 'Rotas que conectam negócios',
     description: 'Atendimento local, regional e interestadual sob consulta.',
   },
   {
-    src: '/frota-hr-urbana.webp',
+    src: '/frota-hr-urbana-adesivada.png',
     alt: 'Caminhão leve da frota preparado para uma coleta urbana',
     headline: 'Agilidade para cargas menores',
     description: 'Veículo leve para coletas e entregas do dia a dia.',
   },
   {
-    src: '/slide-entrega-segura.png',
-    alt: 'Entrega segura e rápida com carga protegida',
-    label: 'Entrega segura',
+    src: '/frota-azul-adesivada.png',
+    alt: 'Caminhão azul da Porto Belo Transportes em frente a um centro logístico',
+    headline: 'Mais um veículo da frota',
+    description: 'Pronto para apoiar coletas e entregas da sua operação.',
   },
   {
-    src: '/slide-frete-5t.png',
-    alt: 'Caminhão leve entregando carga em uma indústria',
-    label: 'Entrega industrial',
-  },
-  {
-    src: '/slide-noite.png',
-    alt: 'Carga amarrada com cuidado em rota noturna',
-    label: 'Carga protegida',
+    src: '/fiorino-adesivada.png',
+    alt: 'Imagem ilustrativa de uma Fiorino branca representando um veículo da frota',
+    headline: 'Agilidade nas coletas',
+    description: 'Fiorino para apoiar entregas leves e urbanas.',
+    note: 'Imagem ilustrativa',
   },
   {
     src: '/slide-retirada-entrega.png',
-    alt: 'Da retirada no local até a entrega',
-    label: 'Retirada e entrega',
+    alt: 'Da retirada da carga até a entrega no destino',
+    campaign: true,
   },
 ];
 
@@ -86,23 +78,17 @@ export function FleetCarousel() {
                   alt={item.alt}
                   className="h-full w-full object-contain"
                 />
-                {'headline' in item ? (
-                  <div className="absolute inset-0 flex items-center bg-[linear-gradient(90deg,rgba(7,21,45,.92)_0%,rgba(7,21,45,.72)_35%,transparent_68%)] p-4 sm:p-8">
-                    <div className="max-w-[58%] sm:max-w-[52%]">
-                      <p className="text-[10px] font-black uppercase text-[#ff3845] sm:text-xs">
-                        Porto Belo Transportes
-                      </p>
-                      <h3 className="mt-1 text-lg font-black leading-tight text-white sm:mt-2 sm:text-3xl lg:text-4xl">
-                        {item.headline}
-                      </h3>
-                      <p className="mt-2 hidden text-sm font-semibold leading-6 text-white/78 sm:block">
-                        {item.description}
-                      </p>
+                {!('campaign' in item) && (
+                  <figcaption className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 bg-gradient-to-t from-[#07152d]/90 via-[#07152d]/45 to-transparent px-4 pb-12 pt-12 text-white sm:px-6 sm:pb-14">
+                    <div>
+                      <h3 className="text-base font-black sm:text-xl">{item.headline}</h3>
+                      <p className="mt-1 hidden text-sm text-white/80 sm:block">{item.description}</p>
                     </div>
-                  </div>
-                ) : (
-                  <figcaption className="absolute bottom-3 left-3 rounded-lg border border-white/12 bg-[#07152d]/82 px-3 py-2 text-xs font-bold text-white shadow-lg backdrop-blur sm:bottom-5 sm:left-5 sm:px-4 sm:text-sm">
-                    {item.label}
+                    {'note' in item && (
+                      <span className="shrink-0 rounded bg-black/45 px-2 py-1 text-[10px] font-bold text-white/90 sm:text-xs">
+                        {item.note}
+                      </span>
+                    )}
                   </figcaption>
                 )}
               </figure>
