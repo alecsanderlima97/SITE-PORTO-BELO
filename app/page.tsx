@@ -27,8 +27,35 @@ const services = [
 ];
 
 export default function Home() {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'MovingCompany',
+    name: 'Porto Belo Transportes',
+    url: 'https://portobelofretes.com.br/',
+    telephone: '+55 15 99609-8202',
+    description:
+      'Transporte de cargas de até 5 toneladas, com atendimento local, regional e interestadual sob consulta.',
+    image: 'https://portobelofretes.com.br/frota-industrial-adesivada.png',
+    areaServed: [
+      'Sorocaba',
+      'Interior de São Paulo',
+      'Rotas interestaduais sob consulta',
+    ],
+    sameAs: ['https://share.google/biZ9KiKddn5BOt7Ow'],
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+55 15 99609-8202',
+      contactType: 'customer service',
+      availableLanguage: 'pt-BR',
+    },
+  };
+
   return (
     <main className="freight-page min-h-screen overflow-x-hidden bg-background pb-16 text-foreground sm:pb-0">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <section className="relative bg-[#07152d] text-white lg:min-h-[92vh]">
         <img
           src="/frota-branca-arte-porto-belo.png"

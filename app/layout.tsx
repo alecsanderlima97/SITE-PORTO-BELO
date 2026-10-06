@@ -13,9 +13,35 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://portobelofretes.com.br'),
   title: 'Porto Belo Transportes | Fretes locais e interestaduais',
   description:
     'Fretes comerciais e residenciais com base em Sorocaba/SP. Porto Belo Transportes atende rotas locais, regionais e interestaduais sob consulta.',
+  keywords: [
+    'frete até 5 toneladas',
+    'transporte de cargas',
+    'fretes em Sorocaba',
+    'fretes no interior de São Paulo',
+    'frete para outros estados',
+    'frete comercial e residencial',
+  ],
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'pt_BR',
+    url: 'https://portobelofretes.com.br/',
+    siteName: 'Porto Belo Transportes',
+    title: 'Porto Belo Transportes | Fretes locais e interestaduais',
+    description:
+      'Transporte de cargas de até 5 toneladas, com atendimento local, regional e interestadual sob consulta.',
+    images: ['/frota-industrial-adesivada.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
