@@ -5,10 +5,10 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const gallery = [
   {
-    src: '/frota-industrial-adesivada.png',
-    alt: 'Caminhão da frota realizando uma entrega industrial',
-    headline: 'Carga industrial no destino',
-    description: 'Coleta e entrega organizadas para sua operação.',
+    src: '/frota-completa-porto-belo.png',
+    alt: 'Frota completa da Porto Belo Transportes reunida em um pátio',
+    headline: 'Uma frota pronta para carregar',
+    description: 'Veículos preparados para coletas e entregas em diferentes rotas.',
   },
   {
     src: '/frota-vw-amanhecer-adesivada.png',
